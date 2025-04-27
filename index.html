@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        .Image_container img{
+                    height: 300px;
+                    border: 2px solid blue;
+                    border-radius: 10px;
+        }
+        .Image_container h2{
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+ </head>
+ <body>
+    <h1>
+        Image Changer
+    </h1>
+    <div class="Image_container">
+        <img src ="https://cdn.pixabay.com/photo/2020/11/09/22/20/tower-bridge-5727975_1280.jpg" alt=""> 
+        <h2>
+         London
+        </h2>
+    </div>
+
+    <script>
+        let img = document.querySelector('img');
+        let h2 = document.querySelector('h2')
+        let prevsrc = img.src
+        let prevText = h2.innerText
+
+        img.addEventListener('mouseover', ()=>{
+            img.src = 'https://cdn.pixabay.com/photo/2019/02/21/18/52/paris-4011964_1280.jpg'
+            h2.innerText = 'Paris'
+            img.style.border = '2px solid yellow'
+        })
+
+        img.addEventListener('mouseleave',()=>{
+            img.src = prevsrc
+            h2.innerText = prevText
+            img.style.border = '2px solid blue'
+
+        })
+    </script>
+ </body>
+ </html>
